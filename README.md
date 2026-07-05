@@ -1,36 +1,54 @@
-# 📊 SmartPPT: AI-Powered Presentation Architect
+# SmartPPT
 
-**SmartPPT** is an automated tool that transforms web content into professional PowerPoint presentations. By leveraging **Google Gemini 2.5 Flash** and **LangChain**, it scrapes data from URLs or Google Search results, summarizes key points, fetches relevant images, and injects them into a pre-designed `.pptx` template.
+SmartPPT is an AI-powered application that automatically creates PowerPoint presentations from web content. Users can either provide a list of URLs or search for a topic, and the application collects relevant information, summarizes it using Google Gemini, and generates a presentation in a predefined PowerPoint template.
 
-## 🧐 Problem Statement
-Creating presentations is traditionally a time-consuming manual process. Researching topics, summarizing long articles, and sourcing high-quality, relevant images often takes hours. **SmartPPT** automates this workflow, allowing users to generate a structured, visually-aided draft in seconds from just a search query or a list of links.
+## Features
 
-## 🚀 Features & USP
-* **🌐 Dual Input Modes:** Choose between providing specific URLs manually or letting the AI find relevant sources via Google Search integration.
-* **🕷️ Intelligent Web Scraper:** Extracts text and image assets from complex HTML structures using **BeautifulSoup4**, with smart filtering for relevant visuals.
-* **🧠 Gemini-Powered Summarization:** Uses Gemini 2.5 Flash to distill raw web data into concise, presentation-ready bullet points.
-* **🖼️ Visual Integration:** Automatically maps discovered web images to specific slides based on content relevance.
-* **🎨 Template Support:** Injects content into a master `.pptx` layout (**Bracket design.pptx**) to ensure professional branding and consistent formatting.
+- Generate presentations from URLs or search queries
+- Extracts content from web pages using BeautifulSoup
+- Summarizes information with Google Gemini
+- Automatically creates PowerPoint slides
+- Adds relevant images from web pages
+- Uses a predefined presentation template for consistent formatting
 
-## 🧠 Technology Stack
+## Tech Stack
 
-| Component | Technology Used |
-| :--- | :--- |
-| **Frontend/UI** | Streamlit |
-| **Orchestration** | LangChain (`langchain-google-genai`) |
-| **AI Model** | Gemini 2.5 Flash (Google AI Studio) |
-| **Search Engine** | Google Search API (`googlesearch-python`) |
-| **PPT Logic** | `python-pptx` |
-| **Web Scraping** | BeautifulSoup4 & Requests |
+- Python
+- Streamlit
+- LangChain
+- Google Gemini 2.5 Flash
+- BeautifulSoup4
+- Requests
+- python-pptx
+- Google Search API
 
-## 📂 Repository
-```text
+## Project Structure
+
+```
 SmartPPT/
-├── .streamlit/
-│   └── secrets.toml     # Google API Key storage
-|── .gitignore           # Git exclusion rules
-|── Ai_ppt.py            # Main Application Script
-├── Bracket design.pptx  # The base PowerPoint template used by the app
-├── PPT.pptx             # Sample ppt on Independence Day
-├── README.md            # Project Documentation
-└── requirements.txt     # Python Dependencies
+├── Ai_ppt.py
+├── Bracket design.pptx
+├── PPT.pptx
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── .streamlit/
+    └── secrets.toml
+```
+
+## How It Works
+
+1. Enter a topic or provide one or more URLs.
+2. The application collects relevant web content.
+3. Google Gemini summarizes the extracted information.
+4. Relevant images are selected from the web pages.
+5. The content and images are added to a PowerPoint template.
+6. A presentation is generated and ready to download.
+
+## Future Improvements
+
+- Support multiple presentation themes
+- Improve image selection using AI
+- Export presentations in PDF format
+- Add editable slide templates
+- Support additional presentation layouts
